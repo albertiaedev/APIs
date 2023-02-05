@@ -8,3 +8,7 @@ class Item(BaseModel):
   description: str
   price: float
   tax: float=0.5
+
+@app.get("/")
+def read_root():
+  return {"REST API CRUD built on FastAPI":"by J.A. Hernández"}
