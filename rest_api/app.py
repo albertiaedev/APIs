@@ -22,3 +22,8 @@ async def create_item(item: Item):
 @app.get("/item/{id}")
 async def read_item(id: int, q: str=None):
   return {"id": id, "q": q}
+
+# Update an item
+@app.put("/item/{id}")
+async def update_item(id: int, item: Item):
+  return {"id": id, "item": item}
