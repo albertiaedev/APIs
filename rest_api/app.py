@@ -12,3 +12,7 @@ class Item(BaseModel):
 @app.get("/")
 def read_root():
   return {"REST API CRUD built on FastAPI":"by J.A. Hernández"}
+
+# Create an item
+async def create_item(item: Item):
+  return item
