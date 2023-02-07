@@ -20,6 +20,6 @@ async def read_task():
 
 # Route to create a new task
 @app.post("/tasks")
-async def create_task(task: Task):
+async def create_task(task: Tasks):
   tasks.append(task.dict())
   return {"task": task}
