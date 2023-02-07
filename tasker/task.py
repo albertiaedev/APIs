@@ -12,3 +12,8 @@ class Tasks(BaseModel):
 # Now we create a list to store tasks in memory
 # Use a SQL/NoSQL database to store the data when you deploy the app to production
 tasks = []
+
+# Route to retrieve all the tasks
+@app.get("/tasks")
+async def read_task():
+  return {"tasks": tasks}
