@@ -23,3 +23,9 @@ async def read_task():
 async def create_task(task: Tasks):
   tasks.append(task.dict())
   return {"task": task}
+
+# Route to update a task by its index in the list
+@app.put("/task/{id}")
+async def update_task(id: int, task: Tasks):
+  tasks[id] = task.dict()
+  return {"task": task}
