@@ -29,3 +29,10 @@ async def create_task(task: Tasks):
 async def update_task(id: int, task: Tasks):
   tasks[id] = task.dict()
   return {"task": task}
+
+# Route to delete a task by its index in the list
+@app.delete("/task/{id}")
+async def delete_task(id: int, task: Tasks):
+  tasks. pop(id)
+  return {"Changes saved": "Task #{id} has been deleted"}
+
