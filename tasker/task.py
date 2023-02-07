@@ -17,3 +17,9 @@ tasks = []
 @app.get("/tasks")
 async def read_task():
   return {"tasks": tasks}
+
+# Route to create a new task
+@app.post("/tasks")
+async def create_task(task: Task):
+  tasks.append(task.dict())
+  return {"task": task}
