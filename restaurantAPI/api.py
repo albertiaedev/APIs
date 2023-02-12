@@ -32,3 +32,9 @@ async def read_menu(id: int, q: str=None):
 @app.put("/menu/{id}")
 async def update_menu(id: int, dish: Dish):
   return {"id": id, "dish": dish}
+
+#Delete a dish in the menu
+@app.delete("/menu/{id}")
+async def delete_menu(id: int, dish: Dish):
+  dish.pop(id)
+  return {"Changes saved": "{dish.name} has been deleted"}
