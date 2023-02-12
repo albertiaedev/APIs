@@ -27,3 +27,8 @@ async def create_menu(dish: Dish):
 @app.get("/menu/{id}")
 async def read_menu(id: int, q: str=None):
   return {"id": id, "q": q}
+
+#Update a dish in the menu
+@app.put("/menu/{id}")
+async def update_menu(id: int, dish: Dish):
+  return {"id": id, "dish": dish}
