@@ -22,3 +22,8 @@ async def create_menu(dish: Dish):
           "description": dish.description,
           "price": dish.price,
           "tax":dish.tax}
+
+#Read a dish in the menu
+@app.get("/menu/{id}")
+async def read_menu(id: int, q: str=None):
+  return {"id": id, "q": q}
